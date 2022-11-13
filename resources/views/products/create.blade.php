@@ -15,7 +15,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="{{route('product.store')}}">
+					<form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
 						@csrf
 						<div class="row form-row">
 							<div class="col-12 col-sm-12">
@@ -62,14 +62,20 @@
 							<div class="col-12 col-sm-6">
 								<div class="form-group">
 									<label>Image</label>
-									<input type="file"  class="form-control">
+									<input type="file" name="image" class="form-control">
 								</div>
+                                @error('image')
+									<span class="text-danger">{{$message }}</span>
+									@enderror
 							</div>
                             <div class="col-12 col-sm-12">
 								<div class="form-group">
 									<label>Details</label>
                                     <textarea name="details" class="form-control" cols="30" rows="10"></textarea>
 								</div>
+                                @error('details')
+									<span class="text-danger">{{$message }}</span>
+									@enderror
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
