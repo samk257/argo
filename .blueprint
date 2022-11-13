@@ -1,0 +1,20 @@
+created:
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/ProductController.php
+    - database/factories/CategoryFactory.php
+    - database/factories/ProductFactory.php
+    - database/migrations/2022_11_11_150612_create_categories_table.php
+    - database/migrations/2022_11_11_150613_create_products_table.php
+    - app/Models/Category.php
+    - app/Models/Product.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - app/Http/Requests/CategoryStoreRequest.php
+    - app/Http/Requests/ProductStoreRequest.php
+    - resources/views/categories/index.blade.php
+    - resources/views/products/index.blade.php
+updated:
+    - routes/web.php
+models:
+    Category: { name: 'string:250', softdeletes: softDeletes, timestamps: timestamps }
+    Product: { name: 'string:250,', quantity: 'decimal:8,2', price: 'decimal:8,2', img: 'string:250', details: longtext, softdeletes: softDeletes, timestamps: timestamps }

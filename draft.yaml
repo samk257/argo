@@ -1,0 +1,36 @@
+models:
+  Category:
+    name : string:250
+    softDeletes
+    timestamps
+
+  Product:
+    name : string:250, 
+    quantity : decimal:8,2
+    price : decimal:8,2
+    img : string:250
+    details : longtext
+    softDeletes
+    timestamps
+
+controllers:
+  Category:
+    index:
+      query : all
+      render: categories.index
+    store:
+      validate: name
+      save: category
+      redirect: Category.index
+
+  Product:
+    index:
+      query : all
+      render: products.index
+
+    store:
+      validate: name,quantity,price
+      save: Product
+      redirect: products.index
+
+  
