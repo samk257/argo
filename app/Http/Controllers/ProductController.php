@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductStoreRequest;
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\ProductStoreRequest;
 
 class ProductController extends Controller
 {
@@ -19,6 +19,14 @@ class ProductController extends Controller
         $products = Product::all();
 
         return view('products.index', compact('products'));
+    }
+
+    public function show($id){
+        $product = Product::find($id);
+
+        return view('products.show', compact('product'));
+
+
     }
 
     /**
@@ -104,8 +112,13 @@ class ProductController extends Controller
     }
     public function destroy($id)
     {
-        $agence=Agence::find($id);
-        $agence->delete();
-        return redirect()->back()->with('success','L\'Agence a ete Supprimee');
+        $product = Product::find($id);
+        $destination = 'public/products'.$product->img;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+        $product->delete();
+        return redirect()->back()->with('success','The product is deleted');
     }
 }
