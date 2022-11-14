@@ -33,4 +33,11 @@ class Product extends Model
         'quantity' => 'decimal:2',
         'price' => 'decimal:2',
     ];
+    public function getImgAttribute($value){
+        if($value){
+             return asset('public/products/'.$value);
+        }else{
+             return asset('members/download.png');
+        }
+     }
 }
