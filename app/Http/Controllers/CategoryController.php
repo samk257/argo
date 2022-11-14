@@ -18,6 +18,10 @@ class CategoryController extends Controller
 
         return view('categories.index', compact('categories'));
     }
+    public function create()
+    {
+        return view('categories.create');
+    }
 
     /**
      * @param \App\Http\Requests\CategoryStoreRequest $request
@@ -27,6 +31,6 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->validated());
 
-        return redirect()->route('Category.index');
+        return redirect()->route('category.index');
     }
 }

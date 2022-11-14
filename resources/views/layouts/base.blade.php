@@ -40,10 +40,10 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.html" class="logo">
-						<img src="assets/img/logo.png" alt="Logo">
+						<img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
 					</a>
 					<a href="index.html" class="logo logo-small">
-						<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
+						<img src="{{ asset('assets/img/logo-small.png') }}" alt="Logo" width="30" height="30">
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -191,6 +191,7 @@
 								<a href="{{ route('users.index') }}"><i class="fe fe-users"></i> <span>Agents</span></a>
 							</li>
 
+
 							@endcan
 
 							@can('is-agent')
@@ -200,6 +201,9 @@
 							</li>
                             <li>
 								<a href="{{ route('product.create') }}"><i class="fe fe-user-plus"></i> <span>add product</span></a>
+							</li>
+                            <li>
+								<a href="{{ route('category.create') }}"><i class="fe fe-user-plus"></i> <span>add Category</span></a>
 							</li>
 							@endcan
                             <li>
@@ -261,6 +265,20 @@
 
 		<!-- Custom JS -->
 		<script  src="{{  asset('assets/js/script.js') }}"></script>
+        @if (Session::has('success'))
+            <script>
+                swal("Success","{!! Session::get('success') !!}","success",
+                {
+                    button:"Ok",
+                })
+            </script>
+        @endif
+        @if (Session::has('success'))
+            <script>
+                toastr.success("{!! Session::get('success') !!}");
+            </script>
+
+        @endif
 
     </body>
 

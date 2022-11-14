@@ -43,12 +43,18 @@
 
 									<td class="text-right">
 										<div class="actions">
-											<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+											<a class="btn btn-sm bg-success-light" href="{{ route('product.edit',$element->id)}}">
 												<i class="fe fe-pencil"></i> Edit
 											</a>
 											<a data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
 												<i class="fe fe-trash"></i> Delete
 											</a>
+                                            <form method="POST" action="{{ route('product.destroy',$element->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                {{-- <input name="_method" type="hidden" value="DELETE"> --}}
+                                                <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'><i class="ik ik-trash-2"></i></button>
+                                            </form>
 										</div>
 									</td>
 								</tr>

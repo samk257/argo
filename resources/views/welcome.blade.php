@@ -392,7 +392,7 @@
                                     <div class="profile-widget">
                                         <div class="doc-img">
                                             <a href="doctor-profile.html">
-                                                <img class="img-fluid" alt="User Image" src="assets/img/doctors/doctor-01.jpg">
+                                                <img class="img-fluid" alt="User Image" src="{{ $item->img }}">
                                             </a>
                                             <a href="javascript:void(0)" class="fav-btn">
                                                 <i class="far fa-bookmark"></i>
