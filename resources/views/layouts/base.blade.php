@@ -191,7 +191,6 @@
 								<a href="{{ route('users.index') }}"><i class="fe fe-users"></i> <span>Agents</span></a>
 							</li>
 
-
 							@endcan
 
 							@can('is-agent')
