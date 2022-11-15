@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,5 +26,12 @@ class HomeController extends Controller
     {
         $users = [];
         return view('users.index', compact('users'));
+    }
+
+    public function productDetails($id)
+    {
+        $prodDetails=Product::find($id);
+        return view('productdetails', compact('prodDetails'));
+
     }
 }

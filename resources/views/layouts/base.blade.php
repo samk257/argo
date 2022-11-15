@@ -159,12 +159,12 @@
 							<a class="dropdown-item" href="profile.html">My Profile</a>
 							<a class="dropdown-item" href="settings.html">Settings</a>
                             <a href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"><b>Logout</b></a>
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><b>Logout</b></a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
 							{{-- <a class="dropdown-item" href="{{ route('logout') }}"></a> --}}
 						</div>
 					</li>
@@ -195,42 +195,29 @@
 							@endcan
 
 							@can('is-agent')
-
-							<li>
-								<a href="{{ route('product.index') }}"><i class="fe fe-user-plus"></i> <span>product</span></a>
-							</li>
-                            <li>
-								<a href="{{ route('product.create') }}"><i class="fe fe-user-plus"></i> <span>add product</span></a>
-							</li>
-                            <li>
-								<a href="{{ route('category.create') }}"><i class="fe fe-user-plus"></i> <span>add Category</span></a>
-							</li>
-							@endcan
-                            <li>
-								<a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
-							</li>
-							<li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+                            <li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> Product </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="login.html"> Login </a></li>
-									<li><a href="register.html"> Register </a></li>
-									<li><a href="forgot-password.html"> Forgot Password </a></li>
-									<li><a href="lock-screen.html"> Lock Screen </a></li>
+                                    <li>
+                                        <a href="{{ route('product.index') }}"><i class="fe fe-user-plus"></i> <span>product</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('product.create') }}"><i class="fe fe-user-plus"></i> <span>add product</span></a>
+                                    </li>
 								</ul>
 							</li>
-
+                            <li class="submenu">
+								<a href="#"><i class="fe fe-document"></i> <span> All Categories </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+                                    <li>
+                                        <a href="{{ route('category.index') }}"><i class="fe fe-user-plus"></i> <span>List Categories</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('category.create') }}"><i class="fe fe-user-plus"></i> <span>add Category</span></a>
+                                    </li>
+								</ul>
 							</li>
-							<li>
-								<a href="blank-page.html"><i class="fe fe-file"></i> <span>Blank Page</span></a>
-							</li>
-							<li class="menu-title">
-								<span>UI Interface</span>
-							</li>
-							<li>
-								<a href="components.html"><i class="fe fe-vector"></i> <span>Components</span></a>
-							</li>
-
-
+							@endcan
 
 						</ul>
 					</div>

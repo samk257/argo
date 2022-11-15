@@ -43,12 +43,18 @@
 
 									<td class="text-right">
 										<div class="actions">
-											<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
-												<i class="fe fe-pencil"></i> Edit
-											</a>
-											<a data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-												<i class="fe fe-trash"></i> Delete
-											</a>
+											<div class="actions">
+                                                <a class="btn btn-sm bg-success-light" href="{{ route('category.destroy',$element->id)}}">
+                                                    <i class="fe fe-pencil"></i> Edit
+                                                </a>
+                                                <form method="POST" action="{{ route('category.destroy',$element->id) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    {{-- <input name="_method" type="hidden" value="DELETE"> --}}
+                                                    <button type="submit" class="btn btn-sm bg-danger-light" title='Delete'><i class="fe fe-trash"></i> Delete</button>
+                                                </form>
+                                            </div>
+
 										</div>
 									</td>
 								</tr>

@@ -27,4 +27,11 @@ class Category extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+    public function getImageAttribute($value){
+        if($value){
+             return asset('public/category/'.$value);
+        }else{
+             return asset('members/download.png');
+        }
+     }
 }

@@ -46,17 +46,15 @@
 											<a class="btn btn-sm bg-success-light" href="{{ route('product.edit',$element->id)}}">
 												<i class="fe fe-pencil"></i> Edit
 											</a>
-                                            <a href="{{ route('product.destroy',$element->id) }}" class="btn btn-sm bg-danger-light"
-                                                onclick="event.preventDefault();
-                                                document.getElementById('delete_form').submit();"><i class="fe fe-trash"></i> Delete
-                                            </a>
-                                            <form id="delete_form" action="{{ route('product.destroy',$element->id) }}" method="POST" class="d-none">
-                                                @csrf
-                                                @method('delete')
-                                            </form>
 											{{-- <a data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
 												<i class="fe fe-trash"></i> Delete
 											</a> --}}
+                                            <form method="POST" action="{{ route('product.destroy',$element->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                {{-- <input name="_method" type="hidden" value="DELETE"> --}}
+                                                <button type="submit" class="btn btn-sm bg-danger-light" title='Delete'><i class="fe fe-trash"></i> Delete</button>
+                                            </form>
 										</div>
 									</td>
 								</tr>

@@ -1,32 +1,32 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-	
+
 <!-- doccure/  30 Nov 2019 04:11:34 GMT -->
-    <head> 
+    <head>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		<title>Doccure</title>
-		
+
 		<!-- Favicons -->
 		<link type="image/x-icon" href="{{asset('guest/img/favicon.png" rel="icon"')}}">
-		
+
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="{{ asset('guest/css/bootstrap.min.css')}}">
-		
+
 		<!-- Fontawesome CSS -->
 		<link rel="stylesheet" href="{{ asset('guest/plugins/fontawesome/css/fontawesome.min.css')}}">
 		<link rel="stylesheet" href="{{ asset('guest/plugins/fontawesome/css/all.min.css')}}">
-		
+
 		<!-- Main CSS -->
 		<link rel="stylesheet"href="{{ asset('guest/css/style.css')}}">
-		
+
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
-	
+
 	</head>
 	<body>
         <div class="main-wrapper">
@@ -52,60 +52,83 @@
                                 <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                 <p>Agroapp</p>
                             </a>
-                            
+
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
                                 <i class="fas fa-times"></i>
                             </a>
                         </div>
                         <ul class="main-nav">
                             <li>
-                                <a href="index-2.html">Accueil</a>
+                                <a href="/">Accueil</a>
                             </li>
                             <li><a href="doctor-dashboard.html">Produits</a></li>
                             <li><a href="doctor-dashboard.html">Categorie</a></li>
-                            
-                                 
-                        </ul>	 
-                    </div>		 
+
+
+                        </ul>
+                    </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item contact-item">
                             <div class="header-contact-img">
-                                <i class="far fa-hospital"></i>							
+                                <i class="far fa-hospital"></i>
                             </div>
                             <div class="header-contact-detail">
                                 <p class="contact-header">Contactez_Nous</p>
                                 <p class="contact-info-header"> +1 315 369 5943</p>
                             </div>
                         </li>
+                        {{-- @if (Route::has('login'))
+                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif --}}
+                        {{-- @if (Route::has('login'))
+                        @auth
+                            <a href="{{ route('logout') }}" class="text-sm text-gray-700<li class="nav-item">
+                                <a class="nav-link header-login" href="login.html">Home</a>
+                            </li>
+                        @else
+
+
+                        @endauth
+
+                        @endif --}}
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="login.html">login / Signup </a>
+                            <a class="nav-link header-login" href="{{ route('login') }}">login</a>
                         </li>
                     </ul>
                 </nav>
             </header>
             <div class="cont">
                 @yield('content')
-
             </div>
 
 
-            
+
         </div>
 
-       
-        
-            
+
+
+
         </div>
-        
+
 
         <footer class="footer">
-        
+
             <!-- Footer Top -->
             <div class="footer-top">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
-                        
+
                             <!-- Footer Widget -->
                             <div class="footer-widget footer-about">
                                 <div class="footer-logo">
@@ -135,11 +158,11 @@
                                 </div>
                             </div>
                             <!-- /Footer Widget -->
-                            
+
                         </div>
-                        
+
                         <div class="col-lg-3 col-md-6">
-                        
+
                             <!-- Footer Widget -->
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">For Patients</h2>
@@ -152,11 +175,11 @@
                                 </ul>
                             </div>
                             <!-- /Footer Widget -->
-                            
+
                         </div>
-                        
+
                         <div class="col-lg-3 col-md-6">
-                        
+
                             <!-- Footer Widget -->
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">For Doctors</h2>
@@ -169,11 +192,11 @@
                                 </ul>
                             </div>
                             <!-- /Footer Widget -->
-                            
+
                         </div>
-                        
+
                         <div class="col-lg-3 col-md-6">
-                        
+
                             <!-- Footer Widget -->
                             <div class="footer-widget footer-contact">
                                 <h2 class="footer-title">Contact Us</h2>
@@ -193,18 +216,18 @@
                                 </div>
                             </div>
                             <!-- /Footer Widget -->
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
             <!-- /Footer Top -->
-            
+
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="container-fluid">
-                
+
                     <!-- Copyright -->
                     <div class="copyright">
                         <div class="row">
@@ -214,7 +237,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-6">
-                            
+
                                 <!-- Copyright Menu -->
                                 <div class="copyright-menu">
                                     <ul class="policy-menu">
@@ -223,31 +246,31 @@
                                     </ul>
                                 </div>
                                 <!-- /Copyright Menu -->
-                                
+
                             </div>
                         </div>
                     </div>
                     <!-- /Copyright -->
-                    
+
                 </div>
             </div>
             <!-- /Footer Bottom -->
-            
+
         </footer>
-	  
+
 		<!-- jQuery -->
 		<script src="{{ asset('guest/js/jquery.min.js')}}"></script>
-		
+
 		<!-- Bootstrap Core JS -->
 		<script src="{{ asset('guest/js/popper.min.js')}}"></script>
 		<script src="{{ asset('guest/js/bootstrap.min.js')}}"></script>
-		
+
 		<!-- Slick JS -->
 		<script src="{{ asset('guest/js/slick.js')}}"></script>
-		
+
 		<!-- Custom JS -->
 		<script src="{{asset('guest/js/script.js')}}"></script>
-		
+
 	</body>
 
 <!-- doccure/  30 Nov 2019 04:11:53 GMT -->

@@ -1,7 +1,7 @@
 @extends('layouts.baseclient')
 @section('content')
 
-<!-- Main Wrapper --> 
+<!-- Main Wrapper -->
     <!-- Breadcrumb -->
 <div class="cont">
     <div class="breadcrumb-bar">
@@ -20,7 +20,7 @@
         </div>
     </div>
     <!-- /Breadcrumb -->
-    
+
     <!-- Page Content -->
     <div class="content">
         <div class="container">
@@ -31,19 +31,12 @@
                     <div class="doctor-widget">
                         <div class="doc-info-left">
                             <div class="doctor-img">
-                                <img src="assets/img/doctors/doctor-thumb-02.jpg" class="img-fluid" alt="User Image">
+                                <img src="{{ $prodDetails->img }}" class="img-fluid" alt="User Image">
                             </div>
                             <div class="doc-info-cont">
-                                <h4 class="doc-name">Nom du produit</h4>
+                                <h4 class="doc-name">{{ $prodDetails->name }}</h4>
                                 <p class="doc-department"><img src="assets/img/specialities/specialities-05.png" class="img-fluid" alt="Speciality">Categorie du produit</p>
-                                <div class="rating">
-                                    <i class="fas fa-star filled"></i>
-                                    <i class="fas fa-star filled"></i>
-                                    <i class="fas fa-star filled"></i>
-                                    <i class="fas fa-star filled"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span class="d-inline-block average-rating">()</span>
-                                </div>
+                                
                                 <div class="clinic-details">
                                     <p class="doc-location"><i class="fas fa-map-marker-alt"></i> Addresse <a href="javascript:void(0);">Get Directions</a></p>
                                     <ul class="clinic-gallery">
@@ -106,49 +99,49 @@
                 </div>
             </div>
             <!-- /Doctor Widget -->
-            
+
             <!-- Doctor Details Tab -->
             <div class="card">
                 <div class="card-body pt-0">
-                
+
                     <!-- Tab Menu -->
                     <nav class="user-tabs mb-4">
                         <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#doc_overview" data-toggle="tab">Overview</a>
                             </li>
-                            
-                            
+
+
                         </ul>
                     </nav>
                     <!-- /Tab Menu -->
-                    
+
                     <!-- Tab Content -->
                     <div class="tab-content pt-0">
-                    
+
                         <!-- Overview Content -->
                         <div role="tabpanel" id="doc_overview" class="tab-pane fade show active">
                             <div class="row">
                                 <div class="col-md-12 col-lg-9">
-                                
+
                                     <!-- About Details -->
                                     <div class="widget about-widget">
                                         <h4 class="widget-title">description du produits</h4>
-                                        <p>Nom du produit</p>
-                                        <p>details du produits</p>
+                                        <p>{{ $prodDetails->name }}</p>
+                                        <p>{{ $prodDetails->details }}</p>
                                     </div>
                                     <!-- /About Details -->
-                                
+
                                     <!-- Education Details -->
                                     <div class="widget education-widget">
                                         <h4 class="widget-title">Addresse</h4>
                                         <div class="experience-box">
                                             <p>addresse du produit</p>
-                                            
+
                                         </div>
                                     </div>
                                     <!-- /Education Details -->
-                            
+
                                     <!-- Experience Details -->
                                     <div class="widget experience-widget">
                                         <h4 class="widget-title">Prix </h4>
@@ -187,12 +180,12 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                     </div>
                                     <!-- /Experience Details -->
-                        
+
                                     <!-- Awards Details -->
                                     <!--<div class="widget awards-widget">
                                         <h4 class="widget-title"></h4>
@@ -238,7 +231,7 @@
                                         </div>
                                     </div>-->
                                     <!-- /Awards Details -->
-                                    
+
                                     <!-- Services List -->
                                     <div class="service-list">
                                         <h4>Addresse</h4>
@@ -246,39 +239,39 @@
                                             <li>province </li>
                                             <li>commune</li>
                                             <li>addresse</li>
-                                            
+
                                         </ul>
                                     </div>
                                     <!-- /Services List -->
-                                    
+
                                     <!-- Specializations List -->
-                                   
+
                                     <!-- /Specializations List -->
 
                                 </div>
                             </div>
                         </div>
                         <!-- /Overview Content -->
-                        
+
                         <!-- Locations Content -->
-                    
+
                         <!-- /Locations Content -->
-                        
-                       
+
+
                         <!-- /Business Hours Content -->
-                        
+
                     </div>
                 </div>
             </div>
             <!-- /Doctor Details Tab -->
 
         </div>
-    </div>	
-</div>	
+    </div>
+</div>
     <!-- /Page Content -->
 
     <!-- Footer -->
-   
+
     <!-- /Footer -->
 
 <!-- /Main Wrapper -->

@@ -31,6 +31,15 @@
 									<span class="text-danger">{{$message }}</span>
 									@enderror
 								</div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Category Image</label>
+                                        <input type="file" name="image" class="form-control">
+                                    </div>
+                                    @error('image')
+                                        <span class="text-danger">{{$message }}</span>
+                                        @enderror
+                                </div>
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary btn-block">Save Changes</button>

@@ -1,7 +1,7 @@
 @extends('layouts.baseclient')
 
 @section('content')
-		
+
 			<section class="section section-search">
 				<div class="container-fluid">
 					<div class="banner-wrapper">
@@ -45,47 +45,20 @@
 							<div class="specialities-slider slider">
 
 								<!-- Slider Item -->
-								<div class="speicality-item text-center">
-									<div class="speicality-img">
-										<img src="assets/img/specialities/specialities-01.png" class="img-fluid" alt="Speciality">
-										<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-									</div>
-									<p>Cereales</p>
-								</div>
+                                @php
+                                    $categories= App\Models\Category::all();
+                                @endphp
+                                @foreach ($categories as $item)
+                                    <div class="speicality-item text-center">
+                                        <div class="speicality-img">
+                                            <img src="{{ $item->image }}" class="img-fluid" alt="Speciality">
+                                            {{-- <span><i class="fa fa-circle" aria-hidden="true"></i></span> --}}
+                                        </div>
+                                        <p>{{ $item->name }}</p>
+                                    </div>
+                                @endforeach
 								<!-- /Slider Item -->
 
-								<!-- Slider Item -->
-								<div class="speicality-item text-center">
-									<div class="speicality-img">
-										<img src="assets/img/specialities/specialities-02.png" class="img-fluid" alt="Speciality">
-										<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-									</div>
-									<p>prouits laitiers</p>
-								</div>
-								<!-- /Slider Item -->
-
-								<!-- Slider Item -->
-								<div class="speicality-item text-center">
-									<div class="speicality-img">
-										<img src="assets/img/specialities/specialities-03.png" class="img-fluid" alt="Speciality">
-										<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-									</div>
-									<p>fruits&legumes</p>
-								</div>
-								<!-- /Slider Item -->
-
-								<!-- Slider Item -->
-								<div class="speicality-item text-center">
-									<div class="speicality-img">
-										<img src="assets/img/specialities/specialities-04.png" class="img-fluid" alt="Speciality">
-										<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-									</div>
-									<p>les viandes&oeufs&poissons</p>
-								</div>
-								<!-- /Slider Item -->
-
-								<!-- Slider Item -->
-								
 								<!-- /Slider Item -->
 
 							</div>
@@ -111,8 +84,8 @@
                                 @foreach ($products as $item)
                                     <div class="profile-widget">
                                         <div class="doc-img">
-                                            <a href="doctor-profile.html">
-                                                <img class="img-fluid" alt="User Image" src="guest/img/doctors/doctor-01.jpg">
+                                            <a href="{{ route('productDetails',$item->id) }}">
+                                                <img class="img-fluid" alt="User Image" src="{{ $item->img }}">
                                             </a>
                                             <a href="javascript:void(0)" class="fav-btn">
                                                 <i class="far fa-bookmark"></i>
@@ -120,7 +93,7 @@
                                         </div>
                                         <div class="pro-content">
                                             <h3 class="title">
-                                                <a href="doctor-profile.html">{{ $item->name }}</a>
+                                                <a href="{{ route('productDetails',$item->id) }}">{{ $item->name }}</a>
                                                 <i class="fas fa-check-circle verified"></i>
                                             </h3>
                                             <p class="speciality">{{ $item->description }}</p>
@@ -152,7 +125,7 @@
                                             </ul>
                                             <div class="row row-sm">
                                                 <div class="col-6">
-                                                    <a href="doctor-profile.html" class="btn view-btn">details</a>
+                                                    <a href="{{ route('productDetails',$item->id) }}" class="btn view-btn">details</a>
                                                 </div>
                                                 <!--<div class="col-6">
                                                     <a href="booking.html" class="btn book-btn">Book Now</a>
@@ -171,11 +144,11 @@
 			<!-- /Popular Section -->
 
 		   <!-- Availabe Features -->
-		   
+
 			<!-- Availabe Features -->
 
 			<!-- Footer -->
-			
+
 			<!-- /Footer -->
 
 	   </div>
