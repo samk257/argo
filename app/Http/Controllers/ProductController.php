@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductStoreRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -58,6 +59,7 @@ class ProductController extends Controller
             $product->province = $request->province;
             $product->maison = $request->maison;
             $product->details = $request->details;
+            $product->user_id = Auth::user()->id;
         if($request->hasFile('image')){
             $file= $request->file('image');
             $filename= $file->getClientOriginalName();
