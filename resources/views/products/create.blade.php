@@ -45,6 +45,24 @@
 									@enderror
 								</div>
 							</div>
+                            <div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Province</label>
+									<input type="text" name="province" value="{{ old('province') }}" class="form-control">
+									@error('province')
+									<span class="text-danger">{{$message }}</span>
+									@enderror
+								</div>
+							</div>
+                            <div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Maison</label>
+									<input type="text" name="maison" value="{{ old('maison') }}" class="form-control">
+									@error('maison')
+									<span class="text-danger">{{$message }}</span>
+									@enderror
+								</div>
+							</div>
 							<div class="col-12 col-sm-6">
 								<div class="form-group">
 									<label>Categories</label>

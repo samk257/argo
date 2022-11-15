@@ -17,6 +17,7 @@ class Category extends Model
      */
     protected $fillable = [
         'name',
+        'image'
     ];
 
     /**
@@ -31,7 +32,7 @@ class Category extends Model
         if($value){
              return asset('public/category/'.$value);
         }else{
-             return asset('members/download.png');
+             return asset('public/category/download.png');
         }
      }
 }

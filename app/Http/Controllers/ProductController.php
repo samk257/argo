@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = ["ALIMENTS","ELECTRONIQUE", "AUTOMOBILE"];
+        $categories = Category::all();
 
         return view('products.create', compact('categories'));
     }
@@ -46,6 +46,8 @@ class ProductController extends Controller
             'name' => ['required', 'string', 'max:250'],
             'quantity' => ['required', 'numeric', 'between:-999999.99,999999.99'],
             'price' => ['required', 'numeric', 'between:-999999.99,999999.99'],
+            'province' => ['required', 'string'],
+            'maison' => ['required', 'string'],
             'details' => ['required', 'string'],
             "image" => "required",
         ]);
@@ -53,6 +55,8 @@ class ProductController extends Controller
             $product->name = $request->name;
             $product->quantity = $request->quantity;
             $product->price = $request->price;
+            $product->province = $request->province;
+            $product->maison = $request->maison;
             $product->details = $request->details;
         if($request->hasFile('image')){
             $file= $request->file('image');
@@ -76,12 +80,16 @@ class ProductController extends Controller
             'name' => ['required', 'string', 'max:250'],
             'quantity' => ['required', 'numeric', 'between:-999999.99,999999.99'],
             'price' => ['required', 'numeric', 'between:-999999.99,999999.99'],
+            'province' => ['required', 'string'],
+            'maison' => ['required', 'string'],
             'details' => ['required', 'string'],
         ]);
             $product = Product::find($id);
             $product->name = $request->name;
             $product->quantity = $request->quantity;
             $product->price = $request->price;
+            $product->province = $request->province;
+            $product->maison = $request->maison;
             $product->details = $request->details;
 
         if($request->hasfile('image'))

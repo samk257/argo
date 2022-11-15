@@ -36,7 +36,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        
+
         'remember_token',
     ];
 
@@ -48,6 +48,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function product(){
+        return $this->hasMany(Product::class);
+    }
 
     public static function boot(){
         parent::boot();
@@ -59,10 +62,10 @@ class User extends Authenticatable
     // Getting user role
     public function isAdmin(){
         return $this->role == 'ADMNISTRATEUR';
-    } 
+    }
     public function isClient(){
         return $this->role == 'CLIENT';
-    }   
+    }
     public function isAgent(){
         return $this->role == 'AGENT';
     }

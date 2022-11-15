@@ -19,6 +19,8 @@ class Product extends Model
         'name',
         'quantity',
         'price',
+        'province',
+        'maison',
         'img',
         'details',
     ];
@@ -37,7 +39,7 @@ class Product extends Model
         if($value){
              return asset('public/products/'.$value);
         }else{
-             return asset('members/download.png');
+             return asset('public/products/download.png');
         }
      }
 }
