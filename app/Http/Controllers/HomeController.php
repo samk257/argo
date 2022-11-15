@@ -28,10 +28,5 @@ class HomeController extends Controller
         return view('users.index', compact('users'));
     }
 
-    public function productDetails($id)
-    {
-        $prodDetails=Product::find($id);
-        return view('productdetails', compact('prodDetails'));
-
-    }
+    
 }
