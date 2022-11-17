@@ -137,4 +137,16 @@ class ProductController extends Controller
         return view('productdetails', compact('prodDetails'));
 
     }
+    public function viewprodbycat($id)
+    {
+        if(Category::where('id',$id)->exists())
+        {
+            $category = Category::where('id',$id)->first();
+            $products = Product::where('cat_id',$category->id)->get();
+            return view('showproductbycategory',compact('category','products'));
+        }
+        else{
+            return redirect('/')->with('error',"The Category doesn't exist");
+        }
+    }
 }

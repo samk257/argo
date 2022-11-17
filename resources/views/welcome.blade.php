@@ -50,11 +50,13 @@
                                 @endphp
                                 @foreach ($categories as $item)
                                     <div class="speicality-item text-center">
+                                        <a href="{{ route('product.bycategory',$item->id) }}">
                                         <div class="speicality-img">
                                             <img src="{{ $item->image }}" class="img-fluid" alt="Speciality">
                                             {{-- <span><i class="fa fa-circle" aria-hidden="true"></i></span> --}}
                                         </div>
                                         <p>{{ $item->name }}</p>
+                                    </a>
                                     </div>
                                 @endforeach
 								<!-- /Slider Item -->
