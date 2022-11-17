@@ -1,13 +1,15 @@
 @extends('layouts.base')
 
 @section('content')
+
+<div class="content container-fluid">
     <div class="page-header">
         <div class="row">
             <div class="col">
-                <h3 class="page-title">Basic Inputs</h3>
+                <h3 class="page-title">Categories des produits</h3>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Basic Inputs</li>
+                    <li class="breadcrumb-item active">Ajouter un nouveau</li>
                 </ul>
             </div>
         </div>
@@ -17,7 +19,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Basic Inputs</h4>
+                    <h4 class="card-title">Nouveau category</h4>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
@@ -49,4 +51,5 @@
         </div>
         <div class="col-lg-2"></div>
     </div>
+</div>
 @endsection
