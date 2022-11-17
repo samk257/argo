@@ -5,9 +5,9 @@
 			<section class="section section-search">
 				<div class="container-fluid">
 					<div class="banner-wrapper">
-						<div class="banner-header text-center">
-							<h1>Prouits alimentaires , trouvez le</h1>
-							<p>retrouvez tous vos produits alimentaires </p>
+						<div class="banner-header text-center ">
+							<h1 class="text-white">Prouits alimentaires , trouvez le</h1>
+							<p class="text-light">retrouvez tous vos produits alimentaires </p>
 						</div>
 
 						<!-- Search -->
@@ -15,12 +15,12 @@
 							<form action="templateshub.net">
 								<div class="form-group search-location">
 									<input type="text" class="form-control" placeholder="par lieu">
-									<span class="form-text">Based sur le  lieu : <strong>entrez un province ou un commune</strong>
+									<span class="form-text text-light">Based sur le  lieu : <strong>entrez un province ou un commune</strong>
 									</span>
 								</div>
 								<div class="form-group search-info">
 									<input type="text" class="form-control" placeholder="aliment  , categories">
-									<span class="form-text">Ex : patate douce , haricots etc..</span>
+									<span class="form-text text-light">Ex : patate douce , haricots etc..</span>
 								</div>
 								<button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i> <span>Recherchez</span></button>
 							</form>
