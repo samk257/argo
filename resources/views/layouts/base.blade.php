@@ -5,10 +5,10 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Doccure - Dashboard</title>
+        <title>Agroapp Dashboard</title>
 
 		<!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="{{  asset('assets/img/favicon.png') }}">
+       <!-- <link rel="shortcut icon" type="image/x-icon" href="{{  asset('assets/img/favicon.png') }}">-->
 
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -40,10 +40,10 @@
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="index.html" class="logo">
-						<img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
+						<h3 class="m-2">Agroapp</h3>
 					</a>
 					<a href="index.html" class="logo logo-small">
-						<img src="{{ asset('assets/img/logo-small.png') }}" alt="Logo" width="30" height="30">
+						<p class="m-2">Agroapp</p>
 					</a>
                 </div>
 				<!-- /Logo -->
@@ -52,12 +52,7 @@
 					<i class="fe fe-text-align-left"></i>
 				</a>
 
-				<div class="top-nav-search">
-					<form>
-						<input type="text" class="form-control" placeholder="Search here">
-						<button class="btn" type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				</div>
+				
 
 				<!-- Mobile Menu Toggle -->
 				<a class="mobile_btn" id="mobile_btn">
@@ -69,76 +64,7 @@
 				<ul class="nav user-menu">
 
 					<!-- Notifications -->
-					<li class="nav-item dropdown noti-dropdown">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
-						</a>
-						<div class="dropdown-menu notifications">
-							<div class="topnav-dropdown-header">
-								<span class="notification-title">Notifications</span>
-								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-							</div>
-							<div class="noti-content">
-								<ul class="notification-list">
-									<li class="notification-message">
-										<a href="#">
-											<div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/doctors/doctor-thumb-01.jpg">
-												</span>
-												<div class="media-body">
-													<p class="noti-details"><span class="noti-title">Dr. Ruby Perrin</span> Schedule <span class="noti-title">her appointment</span></p>
-													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-									<li class="notification-message">
-										<a href="#">
-											<div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
-												</span>
-												<div class="media-body">
-													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
-													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-									<li class="notification-message">
-										<a href="#">
-											<div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient2.jpg">
-												</span>
-												<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Travis Trimble</span> sent a amount of $210 for his <span class="noti-title">appointment</span></p>
-												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-									<li class="notification-message">
-										<a href="#">
-											<div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient3.jpg">
-												</span>
-												<div class="media-body">
-													<p class="noti-details"><span class="noti-title">Carl Kelly</span> send a message <span class="noti-title"> to his doctor</span></p>
-													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="topnav-dropdown-footer">
-								<a href="#">View all Notifications</a>
-							</div>
-						</div>
-					</li>
+					
 					<!-- /Notifications -->
 
 					<!-- User Menu -->
@@ -159,12 +85,12 @@
 							<a class="dropdown-item" href="profile.html">My Profile</a>
 							<a class="dropdown-item" href="settings.html">Settings</a>
                             <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><b>Logout</b></a>
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><b>Logout</b></a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
 							{{-- <a class="dropdown-item" href="{{ route('logout') }}"></a> --}}
 						</div>
 					</li>
@@ -190,33 +116,27 @@
 							<li>
 								<a href="{{ route('users.index') }}"><i class="fe fe-users"></i> <span>Agents</span></a>
 							</li>
+							<li>
+								<a href="{{ route('category.index') }}"><i class="fe fe-users"></i> <span>Categories</span></a>
+							</li>
 
 							@endcan
 
 							@can('is-agent')
-                            <li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> Product </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-                                    <li>
-                                        <a href="{{ route('product.index') }}"><i class="fe fe-user-plus"></i> <span>product</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('product.create') }}"><i class="fe fe-user-plus"></i> <span>add product</span></a>
-                                    </li>
-								</ul>
+
+							<li>
+								<a href="{{ route('product.index') }}"><i class="fe fe-activity"></i> <span>product</span></a>
 							</li>
-                            <li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> All Categories </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-                                    <li>
-                                        <a href="{{ route('category.index') }}"><i class="fe fe-user-plus"></i> <span>List Categories</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('category.create') }}"><i class="fe fe-user-plus"></i> <span>add Category</span></a>
-                                    </li>
-								</ul>
+                            <li>
+								<a href="{{ route('product.create') }}"><i class="fe fe-document"></i> <span>add product</span></a>
 							</li>
 							@endcan
+                            <li>
+								<a href="profile.html"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+							</li>
+						
+
+
 
 						</ul>
 					</div>
@@ -251,20 +171,6 @@
 
 		<!-- Custom JS -->
 		<script  src="{{  asset('assets/js/script.js') }}"></script>
-        @if (Session::has('success'))
-            <script>
-                swal("Success","{!! Session::get('success') !!}","success",
-                {
-                    button:"Ok",
-                })
-            </script>
-        @endif
-        @if (Session::has('success'))
-            <script>
-                toastr.success("{!! Session::get('success') !!}");
-            </script>
-
-        @endif
 
     </body>
 

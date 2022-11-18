@@ -8,14 +8,14 @@
 	<div class="page-header">
 		<div class="row">
 			<div class="col-sm-7 col-auto">
-				<h3 class="page-title">Specialities</h3>
+				<h3 class="page-title">Categories</h3>
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-					<li class="breadcrumb-item active">Specialities</li>
+					<li class="breadcrumb-item active">categories des produits</li>
 				</ul>
 			</div>
 			<div class="col-sm-5 col">
-				<a href="{{ route('product.create') }} " class="btn btn-primary float-right mt-2">Add</a>
+				<a href="{{ route('category.create') }} " class="btn btn-primary float-right mt-2">Add</a>
 			</div>
 		</div>
 	</div>
