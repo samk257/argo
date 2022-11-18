@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('img', 250);
             $table->longText('details');
             $table->foreignId('cat_id')->constrained();
+            $table->foreignId('address_id')->constrained();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();

@@ -20,7 +20,6 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet"href="{{ asset('guest/css/style.css')}}">
-
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -270,6 +269,7 @@
 
 		<!-- Custom JS -->
 		<script src="{{asset('guest/js/script.js')}}"></script>
+
 
 	</body>
 

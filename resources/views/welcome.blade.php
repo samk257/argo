@@ -14,7 +14,10 @@
 						<div class="search-box">
 							<form action="templateshub.net">
 								<div class="form-group search-location">
-									<input type="text" class="form-control" placeholder="par lieu">
+                                    <select name="" class="form-control">
+                                        <option value="">All regions</option>
+                                    </select>
+									{{-- <input type="search" id="tags" class="form-control" placeholder="par lieu"> --}}
 									<span class="form-text">Based sur le  lieu : <strong>entrez un province ou un commune</strong>
 									</span>
 								</div>
@@ -155,6 +158,7 @@
 
 	   </div>
 	   <!-- /Main Wrapper -->
+
 
 @endsection
 
