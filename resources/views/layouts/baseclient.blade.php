@@ -17,6 +17,7 @@
 		<!-- Fontawesome CSS -->
 		<link rel="stylesheet" href="{{ asset('guest/plugins/fontawesome/css/fontawesome.min.css')}}">
 		<link rel="stylesheet" href="{{ asset('guest/plugins/fontawesome/css/all.min.css')}}">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
 		<!-- Main CSS -->
 		<link rel="stylesheet"href="{{ asset('guest/css/style.css')}}">
@@ -160,9 +161,9 @@
 
                         </div>
 
-                       
 
-                       
+
+
 
                         <div class="col-lg-3 col-md-6">
 
@@ -239,6 +240,27 @@
 
 		<!-- Custom JS -->
 		<script src="{{asset('guest/js/script.js')}}"></script>
+
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+
+    var availableProducts = [];
+    $.ajax({
+        type: 'GET',
+        url: '/allregions',
+        success: function (data) {
+            // console.log(data)
+            startCompletePorducts(data);
+        }
+
+    });
+    function startCompletePorducts(availableProducts){
+            $( "#search_product" ).autocomplete({
+            source: availableProducts
+            });
+        }
+
+  </script>
 
 
 	</body>

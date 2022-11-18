@@ -14,11 +14,11 @@
 					<li class="breadcrumb-item active">Ajouter un produit</li>
 				</ul>
 			</div>
-			
+
 		</div>
 	</div>
 	<div class="row d-flex justify-content-center">
-		
+
 			<div class="col-sm-10">
 
 			<div class="card">
@@ -29,8 +29,8 @@
 				<div class="card-body">
 					<div col-sm-6>
 
-					
-					
+
+
 					<form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data" class="m-4">
 						@csrf
 						<div class="row form-row">
@@ -64,8 +64,14 @@
                             <div class="col-12 col-sm-6">
 								<div class="form-group">
 									<label>Province</label>
-									<input type="text" name="province" value="{{ old('province') }}" class="form-control">
-									@error('province')
+                                    <select name="province_id" class="form-control" id="">
+										<option value=""></option>
+                                        @foreach ($provinces as $province)
+                                            <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                        @endforeach
+                                    </select>
+									{{-- <input type="text" name="province" value="{{ old('province') }}" class="form-control"> --}}
+									@error('province_id')
 									<span class="text-danger">{{$message }}</span>
 									@enderror
 								</div>
@@ -82,13 +88,13 @@
 							<div class="col-12 col-sm-6">
 								<div class="form-group">
 									<label>Categories</label>
-									<select name="category" id="role" class="form-control">
+									<select name="cat_id" id="role" class="form-control">
 										<option value=""></option>
 										@foreach ($categories as $category)
 										   <option value="{{$category->id}}">{{$category->name}}</option>
 										@endforeach
 									</select>
-									@error('category')
+									@error('cat_id')
 									<span class="text-danger">{{$message }}</span>
 									@enderror
 								</div>

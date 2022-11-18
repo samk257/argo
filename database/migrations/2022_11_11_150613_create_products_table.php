@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 250, );
             $table->decimal('quantity', 8, 2);
             $table->decimal('price', 8, 2);
-            $table->string('province', 250, );
+            // $table->string('address_id', 250, );
             $table->string('maison', 250, );
             $table->string('img', 250);
             $table->longText('details');

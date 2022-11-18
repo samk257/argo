@@ -12,14 +12,23 @@
 
 						<!-- Search -->
 						<div class="search-box">
-							<form action="templateshub.net">
+							<form action="{{ route('searchProduct') }}" method="POST">
+                                @csrf
 								<div class="form-group search-location">
-									<input type="text" class="form-control" placeholder="par lieu">
-									<span class="form-text">Based sur le  lieu : <strong>entrez un province ou un commune</strong>
+                                    @php
+                                        $regions= App\Models\Province::all();
+                                    @endphp
+                                    <select name="region_id" class="form-control" id="">
+                                        @foreach ($regions as $region)                                            
+                                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                        @endforeach
+                                    </select>
+									{{-- <input type="" class="form-control"  placeholder="par lieu"> --}}
+									<span class="form-text text-light">Based sur le  lieu : <strong>entrez un province ou un commune</strong>
 									</span>
 								</div>
 								<div class="form-group search-info">
-									<input type="text" class="form-control" placeholder="aliment  , categories">
+									<input type="search" class="form-control" name="product_name" id="search_product" placeholder="aliment  , categories">
 									<span class="form-text text-light">Ex : patate douce , haricots etc..</span>
 								</div>
 								<button type="submit" class="btn btn-primary search-btn"><i class="fas fa-search"></i> <span>Recherchez</span></button>

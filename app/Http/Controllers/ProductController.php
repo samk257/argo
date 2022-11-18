@@ -7,6 +7,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductStoreRequest;
+use App\Models\Address;
+use App\Models\Province;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -37,8 +39,9 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-
-        return view('products.create', compact('categories'));
+        // $addresses = Address::all();
+        $provinces = Province::all();
+        return view('products.create', compact('categories','provinces'));
     }
 
     public function store(Request $request)
@@ -47,7 +50,7 @@ class ProductController extends Controller
             'name' => ['required', 'string', 'max:250'],
             'quantity' => ['required', 'numeric', 'between:-999999.99,999999.99'],
             'price' => ['required', 'numeric', 'between:-999999.99,999999.99'],
-            'province' => ['required', 'string'],
+            'province_id' => ['required', 'string'],
             'maison' => ['required', 'string'],
             'details' => ['required', 'string'],
             "image" => "required",
@@ -56,7 +59,8 @@ class ProductController extends Controller
             $product->name = $request->name;
             $product->quantity = $request->quantity;
             $product->price = $request->price;
-            $product->province = $request->province;
+            $product->address_id = $request->province_id;
+            $product->cat_id = $request->cat_id;
             $product->maison = $request->maison;
             $product->details = $request->details;
             $product->user_id = Auth::user()->id;
@@ -73,8 +77,11 @@ class ProductController extends Controller
     {
         $products=Product::find($id);
         $categories = Category::all();
+        // $addresses = Address::all();
+        $provinces = Province::all();
 
-        return view('products.edit',['products'=>$products,'categories'=>$categories]);
+
+        return view('products.edit',['products'=>$products,'categories'=>$categories,'provinces'=>$provinces]);
     }
     public function update(Request $request, $id)
     {
@@ -90,7 +97,7 @@ class ProductController extends Controller
             $product->name = $request->name;
             $product->quantity = $request->quantity;
             $product->price = $request->price;
-            $product->province = $request->province;
+            $product->address_id = $request->address_id;
             $product->maison = $request->maison;
             $product->details = $request->details;
 
